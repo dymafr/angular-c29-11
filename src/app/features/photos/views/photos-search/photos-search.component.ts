@@ -12,8 +12,9 @@ import { selectPhotoList } from '../../shared/store/photos.selectors';
 })
 export class PhotosSearchComponent {
   public photos$: Observable<Photo[]> = this.store.select(selectPhotoList);
+
   constructor(private store: Store) {}
-  
+
   public searchPhoto(search: string) {
     this.store.dispatch(trySearchPhotosAction({ search }));
   }
